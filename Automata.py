@@ -104,7 +104,7 @@ def Alejamiento(a1,a2):
     ##file.write(a1.nombre + " Aleja de Lugar")
     #file.write("\n")
 
-    file.write(a1.nombre + " Aleja")
+    file.write(a1.nombre + " Aleja X")
     file.write("\n")
     fid = 0
     c = random.randrange(32)
@@ -166,7 +166,7 @@ def Conocimiento(a1,a2):
     #file.write(a1.nombre + " adquiere Conocimiento")
     #file.write("\n")
 
-    file.write(a1.nombre + " Conoc")
+    file.write(a1.nombre + " Conoc X")
     file.write("\n")
     fid = 3
     c = random.randrange(32)
@@ -186,7 +186,7 @@ def Informacion(a1,a2):
                 return
     #file.write("Informacion sobre X")
     #file.write("\n")
-    file.write(" Infor")
+    file.write(" Infor X")
     #file.write("\n")
     fid = 4
     c = random.randrange(32)
@@ -341,7 +341,7 @@ def Aceptacion(a1,a2):
                 return
     #file.write(a1.nombre + " Acepta")
     #file.write("\n")
-    file.write(a1.nombre + " Acep")
+    file.write(a1.nombre + " Acep X")
     file.write("\n")
     fid = 11
     c = random.randrange(32)
@@ -361,7 +361,7 @@ def Partida(a1,a2):
                 return
     #file.write(a1.nombre + " Parte hacia Lugar")
     #file.write("\n")
-    file.write(a1.nombre + " Parti")
+    file.write(a1.nombre + " Parti X")
     file.write("\n")
     fid = 12
     c = random.randrange(32)
@@ -406,7 +406,7 @@ def Reaccion(a1,a2):
     #file.write(a1.nombre + " Reacciona")
     #file.write("\n")
 
-    file.write(a1.nombre + " Reac")
+    file.write(a1.nombre + " Reac X")
     file.write("\n")
     fid = 14
     c = random.randrange(32)
@@ -450,7 +450,7 @@ def Viaje(a1,a2):
                 return
     #file.write(a1.nombre + " Viaja a Lugar")
     #file.write("\n")
-    file.write(a1.nombre + " Viaje")
+    file.write(a1.nombre + " Viaje X")
     file.write("\n")
     fid = 16
     c = random.randrange(32)
@@ -512,7 +512,7 @@ def Victoria(a1,a2):
     #file.write(a2.nombre + " tiene la Victoria")
     #file.write("\n")
 
-    file.write(a2.nombre + " Vict")
+    file.write(a2.nombre + " Vict X")
     file.write("\n")
     
     fid = 19
@@ -555,7 +555,7 @@ def Regreso(a1,a2):
     #file.write(a1.nombre + " Regresa a Lugar")
     #file.write("\n")
 
-    file.write(a1.nombre + " Regre")
+    file.write(a1.nombre + " Regre X")
     file.write("\n")
     
     fid = 21
@@ -644,7 +644,7 @@ def Tareadificil(a1,a2):
     #file.write(a1.nombre + " lleva a cabo Tarea dificil")
     #file.write("\n")
 
-    file.write(a1.nombre + " Tarea")
+    file.write(a1.nombre + " Tarea X")
     file.write("\n")
     
     fid = 25
@@ -665,7 +665,7 @@ def Cumplimiento(a1,a2):
                 return
     #file.write(a1.nombre + " Cumple con su acometido")
     #file.write("\n")
-    file.write(a1.nombre + " Cump")
+    file.write(a1.nombre + " Cump X")
     file.write("\n")
     fid = 26
     c = random.randrange(32)
@@ -727,7 +727,7 @@ def Transfiguracion(a1,a2):
     #file.write(a1.nombre + " se Transfigura en Algo")
     #file.write("\n")
 
-    file.write(a1.nombre + " Transfig")
+    file.write(a1.nombre + " Transfig X")
     file.write("\n")
     fid = 29
     c = random.randrange(32)

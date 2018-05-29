@@ -1,12 +1,9 @@
-H Aleja
-V Conoc
-V Prohib H
-H Aleja
-V Reac
-H Desem V
- InforV Recon H
-H Transgred V
-V Aleja
-H Conoc
-H Parti
-V Transgred H
+H Transgre O
+O Prohib H
+H Fechor O
+O Tarea X
+O Viaje X
+H Enmien O
+H Regre X
+O Tarea X
+O Acep X
