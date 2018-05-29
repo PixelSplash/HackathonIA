@@ -48,7 +48,7 @@ def buscarTag(a):
         print(k)
         if(k == a):
             return v
-    return ""
+    return ''
 
 def buscarTagsProbables(a,b):
     trigs = []
