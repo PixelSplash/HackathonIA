@@ -51,19 +51,29 @@ def Engano(a1,a2):
     print(a1.nombre + " Engano " + a2.nombre)
     if(random.randrange(10) > 3):
         funciones[random.randrange(31)](a2,actores[random.randrange(7)])
-        
+
+def Trickery(a1,a2):
+    print(a1.nombre + " Trickery " + a2.nombre)
+    if(random.randrange(10) > 3):
+        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+
 def Complicidad(a1,a2):
     print(a1.nombre + " Complicidad " + a2.nombre)
     if(random.randrange(10) > 3):
         funciones[random.randrange(31)](a2,actores[random.randrange(7)])
-        
+     
 def Fechoria(a1,a2):
     print(a1.nombre + " Fechoria " + a2.nombre)
     if(random.randrange(10) > 3):
         funciones[random.randrange(31)](a2,actores[random.randrange(7)])
-        
+
 def Mediacion(a1,a2):
     print(a1.nombre + " Mediacion " + a2.nombre)
+    if(random.randrange(10) > 3):
+        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+        
+def Recompensa(a1,a2):
+    print(a1.nombre + " Recompensa " + a2.nombre)
     if(random.randrange(10) > 3):
         funciones[random.randrange(31)](a2,actores[random.randrange(7)])
         
@@ -188,17 +198,17 @@ def Inicio():
     else:
         funciones[14](actores[0],actores[random.randrange(7)])
         
-funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engano,Complicidad,Fechoria,Mediacion,Aceptacion,Partida,Prueba,Reaccionheroe,Regalo,Viaje,Lucha,Marca,Victoria,Enmienda,Regreso,Persecucion,Socorro,Regresoincognito,Fingimiento,Tareadificil,Cumplimiento,Reconocimiento,Desenmascaramiento,Transfiguracion,Castigo,Boda]
+funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engano,Trickery,Complicidad,Fechoria,Mediacion,Recompensa,Aceptacion,Partida,Prueba,Reaccionheroe,Regalo,Viaje,Lucha,Marca,Victoria,Enmienda,Regreso,Persecucion,Socorro,Regresoincognito,Fingimiento,Tareadificil,Cumplimiento,Reconocimiento,Desenmascaramiento,Transfiguracion,Castigo,Boda]
 
 actores = [0,0,0,0,0,0,0]
 
-actores[0] = actor(0,0,0,"Heroe",[0,0,0,0,0,0,0])
-actores[1] = actor(0,0,0,"Villano",[0,0,0,0,0,0,0])
-actores[2] = actor(0,0,0,"Princesa",[0,0,0,0,0,0,0])
-actores[3] = actor(0,0,0,"Donante",[0,0,0,0,0,0,0])
-actores[4] = actor(0,0,0,"Auxiliar",[0,0,0,0,0,0,0])
-actores[5] = actor(0,0,0,"Agresor",[0,0,0,0,0,0,0])
-actores[6] = actor(0,0,0,"Ordenante",[0,0,0,0,0,0,0])
+actores[0] = actor(0,0,0,"Heroe",[1,1,1,1,1,1,1])
+actores[1] = actor(0,0,0,"Villano",[1,1,1,1,1,1,1])
+actores[2] = actor(0,0,0,"Princesa",[1,1,1,1,1,1,1])
+actores[3] = actor(0,0,0,"Donante",[1,1,1,1,1,1,1])
+actores[4] = actor(0,0,0,"Auxiliar",[1,1,1,1,1,1,1])
+actores[5] = actor(0,0,0,"Agresor",[1,1,1,1,1,1,1])
+actores[6] = actor(0,0,0,"Ordenante",[1,1,1,1,1,1,1])
 
 Inicio()
 

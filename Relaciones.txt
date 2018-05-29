@@ -1,0 +1,121 @@
+1 = positivo
+2 = negativo
+3 = neutral
+
+(1)Alejamiento: 
+se Alejó 1 
+Se fue 3
+se retiró 1
+Huyó 2
+Escapó 2
+Desapareció 3
+Salió 1
+Abandonó 2
+(2)Prohibición:
+Prohibió 2
+Negó 3
+Impidió 3
+Condenó 2
+Privó 2
+quitó 3
+(3)Transgreción:
+Transgredió 
+quebrantó
+traicionó
+violó
+desobedeció
+incumplió
+infringió
+(4)Interrogatorio:
+Interrogó
+preguntó
+inquirió
+interpeló
+indagó
+cuestionó
+averiguó
+(5)Información:
+dijo
+comentó
+declaró
+manifestó
+expresó
+expuso
+contó
+(6)Engaño: 
+engañó
+mintió
+ocultó
+burló
+confundió
+timó
+(7)Trickery:
+da
+regala
+(8)complicidad:
+le creyó
+no vió
+(9)fechoria: [participantes disponibles] = P
+dañó a + P
+lastimó + P
+Se dirigen al héroe con una pregunta o una orden [Héroe]
+[P]buscó a +[Héroe]
+[P]llamó a +[Héroe]
+[P]recurrió a +[Héroe]
+(10)recompensa: [vida eterna, mucho oro, riquezas, dinero, fortuna, hacienda,fortuna]= O 
+ofreció 3 + [o]
+prometió 1 + [o]
+(11)obligación:
+obligó a + [Héroe] 2
+forzó 2 + [Héroe]
+(12)Aceptación:
+[Pronom] + aceptó
+[Pronom] + accedió
+[Pronom] + partió
+(13)Encuentro con el donante:Donante=D
+[Humano 3 (Bruja, Doncella, campesino)
+Animal 3 (ave, perro, gato, buho) (en medio de la noche)]
+vió + [Dx]1 
+apareció + [Dx]2
+se acercó + [Dx]1
+encontró + [Dx]2
+(14)Donante bueno: (1 sin prueba)
+regaló +[NC0000 + mágico(s)]1 
+obsequió+[NC0000 + mágico(s)] 1
+(15)Donante malo:
+ofreció a cambio de 1 (contestar)
+retó a cambio de [NC0000 + mágico(s)] 2
+(16)Prueba del donante: (solo en 2)
+Prueba2 = [dragón, perro,rinoceronte, león,]
+AN = [malvado, enorme, ]
+surgió 2 + Prueba2 + AN 
+preguntó 1 (acertijo) adj negativo (dificil, enredado, complicado) 
+(17)Acepta:
+aceptó
+accedió
+(18)Niega:
+se rehusó
+no aceptó
+declinó
+se acobardó
+(19)Fin a:
+se quedó [ultimo locativo]
+vivió para siempre en [último locativo]
+murió de [frío, aburrimiento, apatía, tedio, pesadez, sopor]
+(20)Regalo:[NC00000 + mágico(s)]=H 
+recibió +H 1
+obtuvo+H 1
+ganó+H 1
+(21) Enfrentamiento:
+[Héroe] + enfrentó
+[Héroe] +
+[Héroe] +
+[Héroe] +
+[Héroe] +
+[Héroe] +
+(22)
+(23)
+(24)
+
+
+
