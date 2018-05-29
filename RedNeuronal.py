@@ -45,7 +45,7 @@ def buscarTag(a):
     print(a)
     
     for k,v in tags:
-        print(k)
+        #print(k)
         if(k == a):
             return v
     return ''
@@ -54,13 +54,15 @@ def buscarTagsProbables(a,b):
     trigs = []
     a = buscarTag(a)
     b = buscarTag(b)
-    print(a)
-    print(b)
+    #print(a)
+    #print(b)
+    
     for k,v in tdist.items():
         #print(k)
         if(k[0][1] == a and k[1][1] == b):
             trigs.append((k,v))
     print(trigs)
+    '''
     maxx = trigs[0][1]
     k = trigs[0][0]
     
@@ -69,7 +71,8 @@ def buscarTagsProbables(a,b):
             maxx = x[1]
             k = x[0]
     return k[2][1]
-
+    '''
+    return a
 def formarOrac(i):
     j = 2
     oracion = []
