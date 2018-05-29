@@ -45,16 +45,16 @@ RelacionesEntreFunciones = [[0,0,0,1,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,0,1,1,0,0,0,0
                             [1,0,1,0,1,0,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1],#5
                             [0,0,1,0,1,1,0,1,1,0,0,1,1,1,1,0,1,0,1,0,1,1,0,0,1,0,1,1,1,0,1,0],#6
                             [0,1,1,0,1,1,0,0,1,1,0,1,1,1,1,1,1,1,0,0,0,0,1,1,0,0,1,0,0,0,0,1],#7
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#8
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#9
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#10
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#11
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#12
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#13
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#14
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#15
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#16
-                            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#17
+                            [1,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0,1,0],#8
+                            [0,0,0,1,1,1,0,1,1,1,1,1,0,1,0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1],#9
+                            [0,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0,1,0,1,0,0,1],#10
+                            [0,0,0,1,1,0,0,1,0,0,0,0,1,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,0,0],#11
+                            [0,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0],#12
+                            [0,0,0,0,0,1,1,0,1,1,1,1,0,0,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,0,0,0],#13
+                            [1,1,1,0,0,1,0,0,1,0,0,1,1,0,0,0,0,1,0,0,0,1,1,1,0,0,0,1,1,1,1,0],#14
+                            [1,0,0,1,1,0,0,0,1,0,1,1,1,1,0,0,1,1,0,1,0,1,0,0,1,0,1,1,0,0,1,0],#15
+                            [0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,1,1,1,1,0,1,1,0,0,0,0,0],#16
+                            [1,0,1,0,0,0,0,1,1,0,1,0,1,1,1,0,0,0,0,1,0,0,1,1,0,1,0,1,1,1,0,0],#17
                             [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#18
                             [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#19
                             [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],#20
@@ -136,7 +136,7 @@ def Alejamiento(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Prohibicion(a1,a2):
     if(random.randrange(10) > 8):
@@ -150,7 +150,7 @@ def Prohibicion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Transgresion(a1,a2):
     if(random.randrange(10) > 8):
@@ -164,7 +164,7 @@ def Transgresion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Conocimiento(a1,a2):
     if(random.randrange(10) > 8):
@@ -178,7 +178,7 @@ def Conocimiento(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Informacion(a1,a2):
     if(random.randrange(10) > 8):
@@ -192,7 +192,7 @@ def Informacion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Engano(a1,a2):
     if(random.randrange(10) > 8):
@@ -206,7 +206,7 @@ def Engano(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
 
 def Trickery(a1,a2):
     if(random.randrange(10) > 8):
@@ -220,7 +220,7 @@ def Trickery(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
 
 def Complicidad(a1,a2):
     if(random.randrange(10) > 8):
@@ -234,7 +234,7 @@ def Complicidad(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
      
 def Fechoria(a1,a2):
     if(random.randrange(10) > 8):
@@ -248,7 +248,7 @@ def Fechoria(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
 
 def Mediacion(a1,a2):
     if(random.randrange(10) > 8):
@@ -262,7 +262,7 @@ def Mediacion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Recompensa(a1,a2):
     if(random.randrange(10) > 8):
@@ -276,7 +276,7 @@ def Recompensa(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Aceptacion(a1,a2):
     if(random.randrange(10) > 8):
@@ -290,7 +290,7 @@ def Aceptacion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Partida(a1,a2):
     if(random.randrange(10) > 8):
@@ -304,7 +304,7 @@ def Partida(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Prueba(a1,a2):
     if(random.randrange(10) > 8):
@@ -318,7 +318,7 @@ def Prueba(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Reaccion(a1,a2):
     if(random.randrange(10) > 8):
@@ -332,7 +332,7 @@ def Reaccion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Regalo(a1,a2):
     if(random.randrange(10) > 8):
@@ -346,7 +346,7 @@ def Regalo(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Viaje(a1,a2):
     if(random.randrange(10) > 8):
@@ -360,7 +360,7 @@ def Viaje(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Lucha(a1,a2):
     if(random.randrange(10) > 8):
@@ -374,7 +374,7 @@ def Lucha(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Marca(a1,a2):
     if(random.randrange(10) > 8):
@@ -388,7 +388,7 @@ def Marca(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Victoria(a1,a2):
     if(random.randrange(10) > 8):
@@ -402,7 +402,7 @@ def Victoria(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Enmienda(a1,a2):
     if(random.randrange(10) > 8):
@@ -416,7 +416,7 @@ def Enmienda(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Regreso(a1,a2):
     if(random.randrange(10) > 8):
@@ -430,7 +430,7 @@ def Regreso(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Persecucion(a1,a2):
     if(random.randrange(10) > 8):
@@ -444,7 +444,7 @@ def Persecucion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Socorro(a1,a2):
     if(random.randrange(10) > 8):
@@ -458,7 +458,7 @@ def Socorro(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
             
 def Fingimiento(a1,a2):
     if(random.randrange(10) > 8):
@@ -472,7 +472,7 @@ def Fingimiento(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Tareadificil(a1,a2):
     if(random.randrange(10) > 8):
@@ -486,7 +486,7 @@ def Tareadificil(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Cumplimiento(a1,a2):
     if(random.randrange(10) > 8):
@@ -500,7 +500,7 @@ def Cumplimiento(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Reconocimiento(a1,a2):
     if(random.randrange(10) > 8):
@@ -514,7 +514,7 @@ def Reconocimiento(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Desenmascaramiento(a1,a2):
     if(random.randrange(10) > 8):
@@ -528,7 +528,7 @@ def Desenmascaramiento(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Transfiguracion(a1,a2):
     if(random.randrange(10) > 8):
@@ -542,7 +542,7 @@ def Transfiguracion(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Castigo(a1,a2):
     if(random.randrange(10) > 8):
@@ -556,7 +556,7 @@ def Castigo(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
         
 def Boda(a1,a2):
     if(random.randrange(10) > 8):
@@ -571,7 +571,7 @@ def Boda(a1,a2):
         
         if(RelacionesEntreFunciones[fid][c] == 1):
             if(random.randrange(10) > 7):
-                return funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+                return funciones[c](a2,actores[random.randrange(7)])
 
 def Inicio():
     num = random.randrange(4)
