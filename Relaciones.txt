@@ -117,5 +117,38 @@ ganó+H 1
 (23)
 (24)
 
+Alejamiento,
+Prohibicion,
+Transgresion,
+Conocimiento,
+Informacion,
+Engano,
+Trickery,
+Complicidad,
+Fechoria,
+Mediacion,
+Recompensa,
+Aceptacion,
+Partida,
+Prueba,
+Reaccion,
+Regalo,
+Viaje,
+Lucha,
+Marca,
+Victoria,
+Enmienda,
+Regreso,
+Persecucion,
+Socorro,
+Fingimiento,
+Tareadificil,
+Cumplimiento,
+Reconocimiento,
+Desenmascaramiento,
+Transfiguracion,
+Castigo,
+Boda,
+
 
 

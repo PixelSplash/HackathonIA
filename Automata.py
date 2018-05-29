@@ -2,6 +2,74 @@ import random
 
 funciones = ""
 
+'''
+Alejamiento, 0
+Prohibicion, 1
+Transgresion,2
+Conocimiento,3
+Informacion,4
+Engano,5
+Trickery,6
+Complicidad,7
+Fechoria,8
+Mediacion,9
+Recompensa,10
+Aceptacion,11
+Partida,12
+Prueba,13
+Reaccion,14
+Regalo,15
+Viaje,16
+Lucha,17
+Marca,18
+Victoria,19
+Enmienda,20
+Regreso,21
+Persecucion,22
+Socorro,23
+Fingimiento,24
+Tareadificil,25
+Cumplimiento,26
+Reconocimiento,27
+Desenmascaramiento,28
+Transfiguracion,29
+Castigo,30
+Boda,31
+'''
+
+RelacionesEntreFunciones = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+
 class actor:
     nombre = ""
     pid = 0
@@ -24,168 +92,163 @@ class lugar:
 
 def Alejamiento(a1,a2):
     print(a1.nombre + " Alejamiento " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Prohibicion(a1,a2):
     print(a1.nombre + " Prohibicion " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Transgresion(a1,a2):
     print(a1.nombre + " Transgresion " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Conocimiento(a1,a2):
     print(a1.nombre + " Conocimiento " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Informacion(a1,a2):
     print(a1.nombre + " Informacion " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Engano(a1,a2):
     print(a1.nombre + " Engano " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
 
 def Trickery(a1,a2):
     print(a1.nombre + " Trickery " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
 
 def Complicidad(a1,a2):
     print(a1.nombre + " Complicidad " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
      
 def Fechoria(a1,a2):
     print(a1.nombre + " Fechoria " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
 
 def Mediacion(a1,a2):
     print(a1.nombre + " Mediacion " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Recompensa(a1,a2):
     print(a1.nombre + " Recompensa " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Aceptacion(a1,a2):
     print(a1.nombre + " Aceptacion " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Partida(a1,a2):
     print(a1.nombre + " Partida " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Prueba(a1,a2):
     print(a1.nombre + " Prueba " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
-def Reaccionheroe(a1,a2):
+def Reaccion(a1,a2):
     print(a1.nombre + " Reaccionheroe " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Regalo(a1,a2):
     print(a1.nombre + " Regalo " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Viaje(a1,a2):
     print(a1.nombre + " Viaje " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Lucha(a1,a2):
     print(a1.nombre + " Lucha " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Marca(a1,a2):
     print(a1.nombre + " Marca " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Victoria(a1,a2):
     print(a1.nombre + " Victoria " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Enmienda(a1,a2):
     print(a1.nombre + " Enmienda " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Regreso(a1,a2):
     print(a1.nombre + " Regreso " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Persecucion(a1,a2):
     print(a1.nombre + " Persecucion " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Socorro(a1,a2):
     print(a1.nombre + " Socorro " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
-        
-def Regresoincognito(a1,a2):
-    print(a1.nombre + " Regresoincognito " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
-        
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
+            
 def Fingimiento(a1,a2):
     print(a1.nombre + " Fingimiento " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Tareadificil(a1,a2):
     print(a1.nombre + " Tareadificil " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Cumplimiento(a1,a2):
     print(a1.nombre + " Cumplimiento " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Reconocimiento(a1,a2):
     print(a1.nombre + " Reconocimiento " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Desenmascaramiento(a1,a2):
     print(a1.nombre + " Desenmascaramiento " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Transfiguracion(a1,a2):
     print(a1.nombre + " Transfiguracion " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Castigo(a1,a2):
     print(a1.nombre + " Castigo " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
         
 def Boda(a1,a2):
     print(a1.nombre + " Boda " + a2.nombre)
-    if(random.randrange(10) > 3):
-        funciones[random.randrange(31)](a2,actores[random.randrange(7)])
+    if(random.randrange(10) > 1):
+        funciones[random.randrange(32)](a2,actores[random.randrange(7)])
 
 def Inicio():
     num = random.randrange(4)
@@ -198,8 +261,7 @@ def Inicio():
     else:
         funciones[14](actores[0],actores[random.randrange(7)])
         
-funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engano,Trickery,Complicidad,Fechoria,Mediacion,Recompensa,Aceptacion,Partida,Prueba,Reaccionheroe,Regalo,Viaje,Lucha,Marca,Victoria,Enmienda,Regreso,Persecucion,Socorro,Regresoincognito,Fingimiento,Tareadificil,Cumplimiento,Reconocimiento,Desenmascaramiento,Transfiguracion,Castigo,Boda]
-
+funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engano,Trickery,Complicidad,Fechoria,Mediacion,Recompensa,Aceptacion,Partida,Prueba,Reaccion,Regalo,Viaje,Lucha,Marca,Victoria,Enmienda,Regreso,Persecucion,Socorro,Fingimiento,Tareadificil,Cumplimiento,Reconocimiento,Desenmascaramiento,Transfiguracion,Castigo,Boda]
 actores = [0,0,0,0,0,0,0]
 
 actores[0] = actor(0,0,0,"Heroe",[1,1,1,1,1,1,1])
