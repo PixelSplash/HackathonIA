@@ -177,6 +177,17 @@ def Boda(a1,a2):
     if(random.randrange(10) > 3):
         funciones[random.randrange(31)](a2,actores[random.randrange(7)])
 
+def Inicio():
+    num = random.randrange(4)
+    if(num == 0):
+        funciones[0](actores[0],actores[random.randrange(7)])
+    elif(num == 1):
+        funciones[2](actores[0],actores[random.randrange(7)])
+    elif(num == 2):
+        funciones[5](actores[0],actores[random.randrange(7)])
+    else:
+        funciones[14](actores[0],actores[random.randrange(7)])
+        
 funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engano,Complicidad,Fechoria,Mediacion,Aceptacion,Partida,Prueba,Reaccionheroe,Regalo,Viaje,Lucha,Marca,Victoria,Enmienda,Regreso,Persecucion,Socorro,Regresoincognito,Fingimiento,Tareadificil,Cumplimiento,Reconocimiento,Desenmascaramiento,Transfiguracion,Castigo,Boda]
 
 actores = [0,0,0,0,0,0,0]
@@ -189,7 +200,7 @@ actores[4] = actor(0,0,0,"Auxiliar",[0,0,0,0,0,0,0])
 actores[5] = actor(0,0,0,"Agresor",[0,0,0,0,0,0,0])
 actores[6] = actor(0,0,0,"Ordenante",[0,0,0,0,0,0,0])
 
-funciones[random.randrange(31)](actores[0],actores[1])
+Inicio()
 
 
 
