@@ -1,11 +1,16 @@
-from keras.models import Sequential
-from keras.layers import Dense
+import nltk
+from nltk.collocations import *
 
-model = Sequential()
-model.add(Dense(units=64, activation='relu', input_dim=100))
-model.add(Dense(units=10, activation='softmax'))
-model.compile(loss='categorical_crossentropy',
-              optimizer='sgd',
-              metrics=['accuracy'])
+f = open('textofinal.txt', encoding="utf8")
+raw = f.read()
 
+tokens = nltk.word_tokenize(raw)
 
+#Create your bigrams
+tgs = nltk.trigrams(tokens)
+
+#compute frequency distribution for all the bigrams in the text
+fdist = nltk.FreqDist(tgs)
+for k,v in fdist.items():
+    print (k)
+    print (v)
