@@ -1,15 +1,12 @@
-Heroe Engan Princesa
-Princesa Cast Heroe
-Heroe Pers Princesa
-Princesa Cast Heroe
-Heroe Prohib Princesa
-Princesa Aleja X
-Agresor Prueba Princesa
-Princesa Reac X
-Agresor Transfig X
-Agresor Recon Princesa
-Princesa Pers Agresor
-Agresor Tarea X
-Princesa Vict X
-Ayudante Recomp Agresor
-Agresor Regre X
+El_Caballero Transgre El_Mago Malo
+El_Mago Malo Parti X
+El_Verdugo Prueba El_Mago Malo
+El_Mago Malo Trick El_Verdugo
+ Infor XLa_Princesa Mediac El_Mago Malo
+ Infor XEl_Mago Malo Recon La_Princesa
+La_Princesa Transgre El_Mago Malo
+El_Capitan Complic El_Mago Malo
+La_Princesa Transgre El_Capitan
+La_Princesa Marca El_Capitan
+El_Capitan Regre X
+La_Princesa Cast El_Capitan
