@@ -1,42 +1,42 @@
 import random
 
 funciones = ""
+actores = [0,0,0,0,0,0,0]
 
-
-#                            0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1                                           
-RelacionesEntreFunciones = [[0,0,0,1,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0],#0
-                            [1,0,1,0,0,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0],#1
-                            [1,1,1,0,0,0,0,1,1,0,1,0,1,0,1,0,0,1,1,0,1,0,1,1,1,0,0,0,0,0,1,0],#2
-                            [1,1,0,0,0,1,1,0,0,0,1,1,1,0,1,0,0,0,0,0,1,1,0,0,0,1,1,1,0,0,0,0],#3
-                            [1,0,0,1,0,0,0,0,0,1,0,1,1,0,1,1,1,1,0,0,1,1,1,1,1,1,0,1,0,0,0,0],#4
-                            [1,0,1,0,1,0,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1],#5
-                            [0,0,1,0,1,1,0,1,1,0,0,1,1,1,1,0,1,0,1,0,1,1,0,0,1,0,1,1,1,0,1,0],#6
-                            [0,1,1,0,1,1,0,0,1,1,0,1,1,1,1,1,1,1,0,0,0,0,1,1,0,0,1,0,0,0,0,1],#7
-                            [1,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0,1,0],#8
-                            [0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1],#9
-                            [0,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0,1,0,1,0,0,1],#10
-                            [0,0,0,1,1,0,0,1,0,0,0,0,1,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,0,0],#11
-                            [0,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0],#12
-                            [0,0,0,0,0,1,1,0,1,1,1,1,0,0,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,0,0,0],#13
-                            [1,1,1,0,0,1,0,0,1,0,0,1,1,0,0,0,0,1,0,0,0,1,1,1,0,0,0,1,1,1,1,0],#14
-                            [1,0,0,1,1,0,0,0,1,0,1,1,1,1,0,0,1,1,0,1,0,1,0,0,1,0,1,1,0,0,1,0],#15
-                            [0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,1,1,1,1,0,1,1,0,0,0,0,0],#16
-                            [1,0,1,0,0,0,0,1,1,0,1,0,1,1,1,0,0,0,0,1,0,0,1,1,0,1,0,1,1,1,0,0],#17
-                            [0,0,0,1,1,0,0,0,1,0,0,1,0,1,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,1,0],#18
-                            [0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1],#19
-                            [1,0,0,1,0,1,0,0,0,0,1,1,1,0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1],#20
-                            [0,1,0,1,0,1,0,0,0,0,1,0,0,1,0,1,1,0,0,1,1,0,0,1,0,1,1,0,0,0,1,1],#21
-                            [1,0,1,0,0,0,0,0,1,1,0,0,1,1,0,0,1,1,0,1,1,0,0,0,0,1,0,1,1,0,1,0],#22
-                            [0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,0,0,0,0],#23
-                            [0,0,1,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0],#24
-                            [0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,0,0,0,1,0,0,0,0,0],#25
-                            [0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,1,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0],#26
-                            [1,0,1,1,1,0,0,0,0,0,1,1,0,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0,1,1,0,0],#27
-                            [0,1,0,1,1,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,1,1,0,0,0,0,1,0,1,0,0],#28
-                            [0,0,0,1,0,1,0,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,0,0,0,0,1,0,0,1,0],#29
-                            [1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0],#30
-                            [1,0,0,0,0,1,0,1,0,0,0,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0]]#31
-#                            0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1                                           
+#                            0 1 2 3 4 5 6 RelacionesEntreFunciones[fid][c] 8 9 0 1 2 3 4 5 6 RelacionesEntreFunciones[fid][c] 8 9 0 1 2 3 4 5 6 RelacionesEntreFunciones[fid][c] 8 9 0 1                                           
+RelacionesEntreFunciones = [[0,0,0,5,0,0,0,3,0,0,0,3,0,6,5,0,0,0,0,0,3,6,0,0,0,0,0,0,0,0,0,0],#0 Alejamiento
+                            [1,0,1,0,0,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0],#1 Prohibicion
+                            [1,1,1,0,0,0,0,1,1,0,1,0,1,0,1,0,0,1,1,0,1,0,1,1,1,0,0,0,0,0,1,0],#2 Transgresion
+                            [1,1,0,0,0,1,1,0,0,0,1,1,1,0,1,0,0,0,0,0,1,1,0,0,0,1,1,1,0,0,0,0],#3 Conocimiento
+                            [1,0,0,1,0,0,0,0,0,1,0,1,1,0,1,1,1,1,0,0,1,1,1,1,1,1,0,1,0,0,0,0],#4 Informacion
+                            [1,0,1,0,1,0,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1],#5 Engano
+                            [0,0,1,0,1,1,0,1,1,0,0,1,1,1,1,0,1,0,1,0,1,1,0,0,1,0,1,1,1,0,1,0],#6 Trickery
+                            [0,1,1,0,1,1,0,0,1,1,0,1,1,1,1,1,1,1,0,0,0,0,1,1,0,0,1,0,0,0,0,1],#RelacionesEntreFunciones[fid][c] Complicidad
+                            [1,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0,1,0],#8 Fechoria
+                            [0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1],#9 Mediacion
+                            [0,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0,1,0,1,0,0,1],#10 Recompensa
+                            [0,0,0,1,1,0,0,1,0,0,0,0,1,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,0,0],#11 Aceptacion
+                            [0,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0],#12 Partida
+                            [0,0,0,0,0,1,1,0,1,1,1,1,0,0,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,0,0,0],#13 Prueba
+                            [1,1,1,0,0,1,0,0,1,0,0,1,1,0,0,0,0,1,0,0,0,1,1,1,0,0,0,1,1,1,1,0],#14 Reaccion
+                            [1,0,0,1,1,0,0,0,1,0,1,1,1,1,0,0,1,1,0,1,0,1,0,0,1,0,1,1,0,0,1,0],#15 Regalo
+                            [0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,1,1,1,1,0,1,1,0,0,0,0,0],#16 Viaje
+                            [1,0,1,0,0,0,0,1,1,0,1,0,1,1,1,0,0,0,0,1,0,0,1,1,0,1,0,1,1,1,0,0],#1RelacionesEntreFunciones[fid][c] Lucha
+                            [0,0,0,1,1,0,0,0,1,0,0,1,0,1,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,1,0],#18 Marca
+                            [0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1],#19 Victoria
+                            [1,0,0,1,0,1,0,0,0,0,1,1,1,0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1],#20 Enmienda
+                            [0,1,0,1,0,1,0,0,0,0,1,0,0,1,0,1,1,0,0,1,1,0,0,1,0,1,1,0,0,0,1,1],#21 Regreso
+                            [1,0,1,0,0,0,0,0,1,1,0,0,1,1,0,0,1,1,0,1,1,0,0,0,0,1,0,1,1,0,1,0],#22 Persecucion
+                            [0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,0,0,0,0],#23 Socorro
+                            [0,0,1,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0],#24 Fingimiento
+                            [0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,0,0,0,1,0,0,0,0,0],#25 Tareadificil
+                            [0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,1,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0],#26 Cumplimiento
+                            [1,0,1,1,1,0,0,0,0,0,1,1,0,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0,1,1,0,0],#2RelacionesEntreFunciones[fid][c] Reconocimiento
+                            [0,1,0,1,1,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,1,1,0,0,0,0,1,0,1,0,0],#28 Desenmascaramiento
+                            [0,0,0,1,0,1,0,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,0,0,0,0,1,0,0,1,0],#29 Transfiguracion
+                            [1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0],#30 Castigo
+                            [1,0,0,0,0,1,0,1,0,0,0,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0]]#31 Boda
+#                            0 1 2 3 4 5 6 RelacionesEntreFunciones[fid][c] 8 9 0 1 2 3 4 5 6 RelacionesEntreFunciones[fid][c] 8 9 0 1 2 3 4 5 6 RelacionesEntreFunciones[fid][c] 8 9 0 1                                           
 
 
 
@@ -48,7 +48,7 @@ Conocimiento,3
 Informacion,4
 Engano,5
 Trickery,6
-Complicidad,7
+Complicidad,RelacionesEntreFunciones[fid][c]
 Fechoria,8
 Mediacion,9
 Recompensa,10
@@ -58,7 +58,7 @@ Prueba,13
 Reaccion,14
 Regalo,15
 Viaje,16
-Lucha,17
+Lucha,1RelacionesEntreFunciones[fid][c]
 Marca,18
 Victoria,19
 Enmienda,20
@@ -68,7 +68,7 @@ Socorro,23
 Fingimiento,24
 Tareadificil,25
 Cumplimiento,26
-Reconocimiento,27
+Reconocimiento,2RelacionesEntreFunciones[fid][c]
 Desenmascaramiento,28
 Transfiguracion,29
 Castigo,30
@@ -83,7 +83,7 @@ RelacionesEntreActores =   [[0,0,0,0,0,0,0],#0
                             [0,0,0,0,0,0,0],#4
                             [0,0,0,0,0,0,0],#5
                             [0,0,0,0,0,0,0],#6
-                            [0,0,0,0,0,0,0],#7
+                            [0,0,0,0,0,0,0],#RelacionesEntreFunciones[fid][c]
                             [0,0,0,0,0,0,0],#8
                             [0,0,0,0,0,0,0],#9
                             [0,0,0,0,0,0,0],#10
@@ -93,7 +93,7 @@ RelacionesEntreActores =   [[0,0,0,0,0,0,0],#0
                             [0,0,0,0,0,0,0],#14
                             [0,0,0,0,0,0,0],#15
                             [0,0,0,0,0,0,0],#16
-                            [0,0,0,0,0,0,0],#17
+                            [0,0,0,0,0,0,0],#1RelacionesEntreFunciones[fid][c]
                             [0,0,0,0,0,0,0],#18
                             [0,0,0,0,0,0,0],#19
                             [0,0,0,0,0,0,0],#20
@@ -103,7 +103,7 @@ RelacionesEntreActores =   [[0,0,0,0,0,0,0],#0
                             [0,0,0,0,0,0,0],#24
                             [0,0,0,0,0,0,0],#25
                             [0,0,0,0,0,0,0],#26
-                            [0,0,0,0,0,0,0],#27
+                            [0,0,0,0,0,0,0],#2RelacionesEntreFunciones[fid][c]
                             [0,0,0,0,0,0,0],#28
                             [0,0,0,0,0,0,0],#29
                             [0,0,0,0,0,0,0],#30
@@ -132,463 +132,486 @@ class lugar:
 def Alejamiento(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Alejamiento " + a2.nombre)
+    print(a1.nombre + " Aleja de Lugar")
     fid = 0
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+        if(RelacionesEntreFunciones[fid][c] != 0):
+            if(random.randrange(11) < RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Prohibicion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Prohibicion " + a2.nombre)
+    print(a1.nombre + " Prohibicion de X a " + a2.nombre)
     fid = 1
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Transgresion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Transgresion " + a2.nombre)
+    print(a1.nombre + " Transgrede a " + a2.nombre)
     fid = 2
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Conocimiento(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Conocimiento " + a2.nombre)
+    print(a1.nombre + " adquiere Conocimiento")
     fid = 3
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a1,a2)
         
 def Informacion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Informacion " + a2.nombre)
+    print("Informacion sobre X")
     fid = 4
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a1,a2)
         
 def Engano(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Engano " + a2.nombre)
+    print(a1.nombre + " Engana a " + a2.nombre)
     fid = 5
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
 
 def Trickery(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Trickery " + a2.nombre)
+    print(a1.nombre + " Trick a " + a2.nombre)
     fid = 6
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
 
 def Complicidad(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Complicidad " + a2.nombre)
+
+    num = random.randrange(7)
+    while(num == a1.pid):
+        num = random.randrange(7)
+    print(actores[num].nombre + " tiene Complicidad con " + a1.nombre)
     fid = 7
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a2,actores[num])
      
 def Fechoria(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Fechoria " + a2.nombre)
+    print(a1.nombre + " Fechoria a " + a2.nombre)
     fid = 8
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
 
 def Mediacion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Mediacion " + a2.nombre)
+    num = random.randrange(7)
+    while(num == a2.pid):
+        num = random.randrange(7)
+    print(actores[num].nombre + " Mediacion con " + a2.nombre)
     fid = 9
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a2,actores[num])
         
 def Recompensa(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Recompensa " + a2.nombre)
     fid = 10
-    c = 0
+    num = random.randrange(7)
+    while(num == a2.pid):
+        num = random.randrange(7)
+    print(actores[num].nombre + " Recompensa a " + a2.nombre)
+    
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Aceptacion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Aceptacion " + a2.nombre)
+    print(a1.nombre + " Acepta")
     fid = 11
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Partida(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Partida " + a2.nombre)
+    print(a1.nombre + " Parte hacia Lugar")
     fid = 12
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Prueba(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Prueba " + a2.nombre)
     fid = 13
-    c = 0
+    num = random.randrange(7)
+    while(num == a2.pid):
+        num = random.randrange(7)
+    print(actores[num].nombre + " Prueba a " + a2.nombre)
+    
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a2,actores[num])
         
 def Reaccion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Reaccionheroe " + a2.nombre)
+    print(a1.nombre + " Reacciona")
     fid = 14
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Regalo(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Regalo " + a2.nombre)
     fid = 15
-    c = 0
+    num = random.randrange(7)
+    while(num == a2.pid):
+        num = random.randrange(7)
+    print(actores[num].nombre + " Regala Objeto a " + a2.nombre)
+    
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Viaje(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Viaje " + a2.nombre)
+    print(a1.nombre + " Viaja a Lugar")
     fid = 16
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Lucha(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Lucha " + a2.nombre)
+    print(a1.nombre + " Lucha contra " + a2.nombre)
     fid = 17
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Marca(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Marca " + a2.nombre)
+    print(a2.nombre + " afecta mentalmente a " + a1.nombre)
     fid = 18
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a1,a2)
         
 def Victoria(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Victoria " + a2.nombre)
+    print(a2.nombre + " tiene la Victoria")
     fid = 19
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Enmienda(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Enmienda " + a2.nombre)
+    print(a1.nombre + " se arregla con " + a2.nombre)
     fid = 20
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a1,a2)
         
 def Regreso(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Regreso " + a2.nombre)
+    print(a1.nombre + " Regresa a Lugar")
     fid = 21
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Persecucion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Persecucion " + a2.nombre)
+    print(a1.nombre + " Persigue a " + a2.nombre)
     fid = 22
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Socorro(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Socorro " + a2.nombre)
     fid = 23
-    c = 0
+    num = random.randrange(7)
+    while(num == a2.pid):
+        num = random.randrange(7)
+    print(a2.nombre + " Ayuda a " + actores[num].nombre)
+    
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](actores[num],a2)
             
 def Fingimiento(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Fingimiento " + a2.nombre)
+    print(a1.nombre + " Finge frente a " + a2.nombre)
     fid = 24
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Tareadificil(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Tareadificil " + a2.nombre)
+    print(a1.nombre + " lleva a cabo Tarea dificil")
     fid = 25
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a1,a2)
         
 def Cumplimiento(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Cumplimiento " + a2.nombre)
+    print(a1.nombre + " Cumple con su acometido")
     fid = 26
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a1,a2)
         
 def Reconocimiento(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Reconocimiento " + a2.nombre)
+    print(a1.nombre + " Reconoce la verdadera forma de " + a2.nombre)
     fid = 27
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Desenmascaramiento(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Desenmascaramiento " + a2.nombre)
+    print(a1.nombre + " Desenmascara a " + a2.nombre)
     fid = 28
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Transfiguracion(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Transfiguracion " + a2.nombre)
+    print(a1.nombre + " se Transfigura en Algo")
     fid = 29
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
-                return funciones[c](a2,a1)
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
+                return funciones[c](a1,a2)
         
 def Castigo(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Castigo " + a2.nombre)
+    print(a1.nombre + " Castiga a " + a2.nombre)
     fid = 30
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
         
 def Boda(a1,a2):
     if(random.randrange(10) > 8):
                 return
-    print(a1.nombre + " Boda " + a2.nombre)
+    print(a1.nombre + " Boda con " + a2.nombre)
     
     fid = 31
-    c = 0
+    c = random.randrange(32)
     while(1):
         c = c + 1
         c = c % 32
         
         if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) > 7):
+            if(random.randrange(10) > RelacionesEntreFunciones[fid][c]):
                 return funciones[c](a2,a1)
 
 def Inicio():
-    num = random.randrange(4)
+    num = random.randrange(3)
     if(num == 0):
-        funciones[0](actores[0],actores[random.randrange(7)])
+        funciones[0](actores[0],actores[random.randrange(6)+1])
     elif(num == 1):
-        funciones[2](actores[0],actores[random.randrange(7)])
+        funciones[2](actores[0],actores[random.randrange(6)+1])
     else:
-        funciones[5](actores[0],actores[random.randrange(7)])
+        funciones[5](actores[0],actores[random.randrange(6)+1])
         
 funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engano,Trickery,Complicidad,Fechoria,Mediacion,Recompensa,Aceptacion,Partida,Prueba,Reaccion,Regalo,Viaje,Lucha,Marca,Victoria,Enmienda,Regreso,Persecucion,Socorro,Fingimiento,Tareadificil,Cumplimiento,Reconocimiento,Desenmascaramiento,Transfiguracion,Castigo,Boda]
-actores = [0,0,0,0,0,0,0]
+
 
 actores[0] = actor(0,0,0,"Heroe",[1,1,1,1,1,1,1])
 actores[1] = actor(0,0,0,"Villano",[1,1,1,1,1,1,1])
