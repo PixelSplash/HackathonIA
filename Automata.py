@@ -145,7 +145,7 @@ def Transgresion(a1,a2):
     #file.write(a1.nombre + " Transgrede a " + a2.nombre)
     #file.write("\n")
 
-    file.write(a1.nombre + " Transgred " + a2.nombre)
+    file.write(a1.nombre + " Transgre " + a2.nombre)
     file.write("\n")
     fid = 2
     c = random.randrange(32)
@@ -706,7 +706,7 @@ def Desenmascaramiento(a1,a2):
     #file.write(a1.nombre + " Desenmascara a " + a2.nombre)
     #file.write("\n")
 
-    file.write(a1.nombre + " Desem " + a2.nombre)
+    file.write(a1.nombre + " Desen " + a2.nombre)
     file.write("\n")
     fid = 28
     c = random.randrange(32)
