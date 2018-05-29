@@ -118,7 +118,7 @@ def formarOrac(i):
     sta = ""
     for x in oracion:
         sta = sta + x + " "
-    print(sta + "\n")
+    print(sta + " ")
 
 for x in content:
     #print(x)
@@ -131,129 +131,161 @@ for x in content:
     if(c == "Aleja"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Prohib"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Transgre"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Conoc"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Infor"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Engan"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Trick"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Complic"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Fechor"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Mediac"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Recomp"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Acep"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Parti"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Prueba"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Reac"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Regal"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Viaje"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Lucha"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Marca"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Vict"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Enmien"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Regre"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Pers"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Ayud"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Finge"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Tarea"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Cump"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Recon"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Desen"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Transfig"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Cast"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
     i+=1
     if(c == "Boda"):
         print(s,end=" ")
         formarOrac(i)
+        print( "( " + z + " )")
 
 
