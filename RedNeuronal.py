@@ -41,12 +41,34 @@ with open('ntree.txt', "r", encoding="utf8") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 content = [x.strip() for x in content]
 
+def buscarTag(a):
+    print(a)
+    
+    for k,v in tags:
+        print(k)
+        if(k == a):
+            return v
+    return ""
 
 def buscarTagsProbables(a,b):
-
+    trigs = []
+    a = buscarTag(a)
+    b = buscarTag(b)
+    print(a)
+    print(b)
     for k,v in tdist.items():
-        if(k[0][0][0] == a and k[0][1][0] == b):
-            
+        #print(k)
+        if(k[0][1] == a and k[1][1] == b):
+            trigs.append((k,v))
+    print(trigs)
+    maxx = trigs[0][1]
+    k = trigs[0][0]
+    
+    for x in trigs:
+        if maxx < x[1]:
+            maxx = x[1]
+            k = x[0]
+    return k[2][1]
 
 def formarOrac(i):
     j = 2
@@ -68,7 +90,7 @@ def formarOrac(i):
     oracion.append(aux[n][1])
     oracion.append(aux[n][2])
 
-    buscarTagsProbables(aux[n][1],aux[n][2])
+    print(buscarTagsProbables(aux[n][1],aux[n][2]))
     while(oracion[j] != '.' and oracion[j] != ',' and oracion[j] != ';'):
         c = 0
         aux = []

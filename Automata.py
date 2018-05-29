@@ -793,13 +793,13 @@ def Inicio():
 funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engano,Trickery,Complicidad,Fechoria,Mediacion,Recompensa,Aceptacion,Partida,Prueba,Reaccion,Regalo,Viaje,Lucha,Marca,Victoria,Enmienda,Regreso,Persecucion,Socorro,Fingimiento,Tareadificil,Cumplimiento,Reconocimiento,Desenmascaramiento,Transfiguracion,Castigo,Boda]
 
 
-actores[0] = actor(0,0,0,"H",[1,1,1,1,1,1,1])
-actores[1] = actor(0,1,0,"V",[1,1,1,1,1,1,1])
-actores[2] = actor(0,2,0,"P",[1,1,1,1,1,1,1])
-actores[3] = actor(0,3,0,"D",[1,1,1,1,1,1,1])
-actores[4] = actor(0,4,0,"A",[1,1,1,1,1,1,1])
-actores[5] = actor(0,5,0,"X",[1,1,1,1,1,1,1])
-actores[6] = actor(0,6,0,"O",[1,1,1,1,1,1,1])
+actores[0] = actor(0,0,0,"Heroe",[1,1,1,1,1,1,1])
+actores[1] = actor(0,1,0,"Villano",[1,1,1,1,1,1,1])
+actores[2] = actor(0,2,0,"Princesa",[1,1,1,1,1,1,1])
+actores[3] = actor(0,3,0,"Donador",[1,1,1,1,1,1,1])
+actores[4] = actor(0,4,0,"Ayudante",[1,1,1,1,1,1,1])
+actores[5] = actor(0,5,0,"Agresor",[1,1,1,1,1,1,1])
+actores[6] = actor(0,6,0,"Ordenante",[1,1,1,1,1,1,1])
 
 Inicio()
 file.close()

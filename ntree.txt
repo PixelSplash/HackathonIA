@@ -1,13 +1,14 @@
-H Transgre X
-X Transgre H
-H Parti X
-H Ayud O
-O Reac X
-H Engan O
-H Ayud P
-P Recomp H
-H Engan P
-H Vict X
-H Transfig X
-X Recomp P
-A Complic P
+Heroe Transgre Donador
+Donador Aleja X
+Heroe Regre X
+Donador Enmien Heroe
+Donador Acep X
+Heroe Reac X
+Donador Recon Heroe
+Heroe Conoc X
+Heroe Enmien Donador
+Heroe Lucha Donador
+Donador Pers Heroe
+Heroe Recon Donador
+Donador Desen Heroe
+ Infor XHeroe Parti X
