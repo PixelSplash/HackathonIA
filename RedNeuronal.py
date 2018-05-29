@@ -11,6 +11,8 @@ tgs = nltk.trigrams(tokens)
 
 #compute frequency distribution for all the bigrams in the text
 fdist = nltk.FreqDist(tgs)
+
+
 for k,v in fdist.items():
     print (k)
     print (v)

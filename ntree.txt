@@ -1,5 +1,12 @@
 H Aleja
-O Acep
-V Complic H
-O Parti
-X Prueba O
+V Conoc
+V Prohib H
+H Aleja
+V Reac
+H Desem V
+ InforV Recon H
+H Transgred V
+V Aleja
+H Conoc
+H Parti
+V Transgred H

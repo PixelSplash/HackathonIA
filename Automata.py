@@ -2,42 +2,43 @@ import random
 
 funciones = ""
 actores = [0,0,0,0,0,0,0]
-
+global count
+count = 0
 file = open("ntree.txt","w") 
 
 #                            0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1                                           
 RelacionesEntreFunciones = [[0,0,0,5,0,0,0,3,0,0,0,3,0,6,5,0,0,0,0,0,3,6,0,0,0,0,0,0,0,0,0,0],#0 Alejamiento
                             [8,0,6,0,0,0,2,7,5,5,0,6,0,0,7,0,0,3,0,0,0,0,0,0,3,0,6,0,0,0,0,0],#1 Prohibicion
-                            [5,4,6,0,0,0,0,7,5,0,1,0,6,0,3,0,0,6,4,0,5,0,3,2,2,0,0,0,0,0,3,0],#2 Transgresion
+                            [5,4,6,0,0,0,0,7,5,0,2,0,6,0,3,0,0,6,4,0,5,0,3,2,2,0,0,0,0,0,3,0],#2 Transgresion
                             [5,5,0,0,0,5,5,0,0,0,5,5,5,0,5,0,0,0,0,0,5,5,0,0,0,5,5,5,0,0,0,0],#3 Conocimiento
                             [5,0,0,5,0,0,0,0,0,5,0,5,5,0,5,5,5,5,0,0,5,5,5,5,5,5,0,5,0,0,0,0],#4 Informacion
-                            [1,0,1,0,1,0,1,1,1,0,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1],#5 Engano
-                            [0,0,1,0,1,1,0,1,1,0,0,1,1,1,1,0,1,0,1,0,1,1,0,0,1,0,1,1,1,0,1,0],#6 Trickery
-                            [0,1,1,0,1,1,0,0,1,1,0,1,1,1,1,1,1,1,0,0,0,0,1,1,0,0,1,0,0,0,0,1],#7 Complicidad
-                            [1,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0,1,0],#8 Fechoria
-                            [0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1],#9 Mediacion
-                            [0,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0,1,0,1,0,0,1],#10 Recompensa
-                            [0,0,0,1,1,0,0,1,0,0,0,0,1,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,0,0],#11 Aceptacion
-                            [0,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0],#12 Partida
-                            [0,0,0,0,0,1,1,0,1,1,1,1,0,0,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,0,0,0],#13 Prueba
-                            [1,1,1,0,0,1,0,0,1,0,0,1,1,0,0,0,0,1,0,0,0,1,1,1,0,0,0,1,1,1,1,0],#14 Reaccion
-                            [1,0,0,1,1,0,0,0,1,0,1,1,1,1,0,0,1,1,0,1,0,1,0,0,1,0,1,1,0,0,1,0],#15 Regalo
-                            [0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,1,1,1,1,0,1,1,0,0,0,0,0],#16 Viaje
-                            [1,0,1,0,0,0,0,1,1,0,1,0,1,1,1,0,0,0,0,1,0,0,1,1,0,1,0,1,1,1,0,0],#17 Lucha
-                            [0,0,0,1,1,0,0,0,1,0,0,1,0,1,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,1,0],#18 Marca
-                            [0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1],#19 Victoria
-                            [1,0,0,1,0,1,0,0,0,0,1,1,1,0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1],#20 Enmienda
-                            [0,1,0,1,0,1,0,0,0,0,1,0,0,1,0,1,1,0,0,1,1,0,0,1,0,1,1,0,0,0,1,1],#21 Regreso
-                            [1,0,1,0,0,0,0,0,1,1,0,0,1,1,0,0,1,1,0,1,1,0,0,0,0,1,0,1,1,0,1,0],#22 Persecucion
-                            [0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,1,1,0,1,1,1,1,0,0,0,1,1,1,0,0,0,0],#23 Socorro
-                            [0,0,1,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0],#24 Fingimiento
-                            [0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,0,0,0,1,0,0,0,0,0],#25 Tareadificil
-                            [0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,1,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0],#26 Cumplimiento
-                            [1,0,1,1,1,0,0,0,0,0,1,1,0,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0,1,1,0,0],#27 Reconocimiento
-                            [0,1,0,1,1,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,1,1,0,0,0,0,1,0,1,0,0],#28 Desenmascaramiento
-                            [0,0,0,1,0,1,0,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,0,0,0,0,1,0,0,1,0],#29 Transfiguracion
-                            [1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0],#30 Castigo
-                            [1,0,0,0,0,1,0,1,0,0,0,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0]]#31 Boda
+                            [2,0,2,0,2,0,2,2,2,0,2,0,2,2,2,2,2,2,0,2,2,2,2,2,2,0,2,2,2,2,2,2],#5 Engano
+                            [0,0,2,0,2,2,0,2,2,0,0,2,2,2,2,0,2,0,2,0,2,2,0,0,2,0,2,2,2,0,2,0],#6 Trickery
+                            [0,2,2,0,2,2,0,0,2,2,0,2,2,2,2,2,2,2,0,0,0,0,2,2,0,0,2,0,0,0,0,2],#7 Complicidad
+                            [2,2,2,0,0,2,0,0,0,0,2,0,2,2,2,2,2,2,0,2,0,0,2,0,0,2,0,0,2,0,2,0],#8 Fechoria
+                            [0,0,0,2,2,2,0,2,2,0,2,2,0,2,0,2,0,2,0,2,2,0,0,0,0,0,0,0,0,0,0,2],#9 Mediacion
+                            [0,0,0,0,0,2,0,2,0,0,0,2,2,2,2,2,2,0,2,2,2,2,2,0,0,0,2,0,2,0,0,2],#20 Recompensa
+                            [0,0,0,2,2,0,0,2,0,0,0,0,2,2,2,0,2,2,2,0,2,2,0,2,0,2,0,2,2,0,0,0],#22 Aceptacion
+                            [0,0,2,2,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,2,2,2,2,0,0,0,0,0,0,0,0],#22 Partida
+                            [0,0,0,0,0,2,2,0,2,2,2,2,0,0,2,2,0,2,2,2,2,0,2,2,0,2,2,0,2,0,0,0],#23 Prueba
+                            [2,2,2,0,0,2,0,0,2,0,0,2,2,0,0,0,0,2,0,0,0,2,2,2,0,0,0,2,2,2,2,0],#24 Reaccion
+                            [2,0,0,2,2,0,0,0,2,0,2,2,2,2,0,0,2,2,0,2,0,2,0,0,2,0,2,2,0,0,2,0],#25 Regalo
+                            [0,0,0,2,2,0,0,0,0,0,2,0,0,2,0,0,0,2,0,0,2,2,2,2,0,2,2,0,0,0,0,0],#26 Viaje
+                            [2,0,2,0,0,0,0,2,2,0,2,0,2,2,2,0,0,0,0,2,0,0,2,2,0,2,0,2,2,2,0,0],#27 Lucha
+                            [0,0,0,2,2,0,0,0,2,0,0,2,0,2,2,0,0,0,0,0,0,2,0,2,0,2,0,0,0,2,2,0],#28 Marca
+                            [0,0,0,0,0,0,0,0,0,0,2,2,2,0,2,2,2,0,0,0,2,2,0,0,0,0,0,0,0,2,2,2],#29 Victoria
+                            [2,0,0,2,0,2,0,0,0,0,2,2,2,0,2,0,0,2,0,2,0,2,0,0,0,0,0,0,0,0,0,2],#20 Enmienda
+                            [0,2,0,2,0,2,0,0,0,0,2,0,0,2,0,2,2,0,0,2,2,0,0,2,0,2,2,0,0,0,2,2],#22 Regreso
+                            [2,0,2,0,0,0,0,0,2,2,0,0,2,2,0,0,2,2,0,2,2,0,0,0,0,2,0,2,2,0,2,0],#22 Persecucion
+                            [0,0,0,0,0,0,0,0,0,0,2,0,2,0,2,2,2,0,2,2,2,2,0,0,0,2,2,2,0,0,0,0],#23 Socorro
+                            [0,0,2,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,2,0],#24 Fingimiento
+                            [0,0,0,0,0,0,0,0,0,0,2,2,2,2,0,0,2,2,2,2,0,0,2,0,0,0,2,0,0,0,0,0],#25 Tareadificil
+                            [0,0,0,0,0,0,0,0,0,0,2,0,2,0,2,2,0,0,0,2,2,2,0,0,0,0,0,2,0,0,0,0],#26 Cumplimiento
+                            [2,0,2,2,2,0,0,0,0,0,2,2,0,0,2,0,0,2,0,0,0,0,2,0,0,2,0,0,2,2,0,0],#27 Reconocimiento
+                            [0,2,0,2,2,0,0,0,0,0,0,2,0,2,2,0,0,2,0,0,0,2,2,0,0,0,0,2,0,2,0,0],#28 Desenmascaramiento
+                            [0,0,0,2,0,2,0,0,0,0,2,2,0,2,2,0,0,0,2,0,2,2,0,0,0,0,0,2,0,0,2,0],#29 Transfiguracion
+                            [2,2,2,0,0,0,0,0,0,0,0,2,0,2,0,0,0,0,2,0,0,2,2,0,0,0,0,0,0,0,0,0],#30 Castigo
+                            [2,0,0,0,0,2,0,2,0,0,0,0,2,0,2,2,2,0,2,0,0,2,0,0,0,0,2,0,0,2,0,0]]#31 Boda
 #                            0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1                                           
 
 
@@ -96,7 +97,9 @@ class lugar:
     nombre = ""
 
 def Alejamiento(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     ##file.write(a1.nombre + " Aleja de Lugar")
     #file.write("\n")
@@ -107,14 +110,17 @@ def Alejamiento(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] != 0):
-            if(random.randrange(11) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] != 0):
+            if(random.randrange(11) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Prohibicion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Prohibicion de X a " + a2.nombre)
     #file.write("\n")
@@ -124,14 +130,17 @@ def Prohibicion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Transgresion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Transgrede a " + a2.nombre)
     #file.write("\n")
@@ -142,14 +151,17 @@ def Transgresion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Conocimiento(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " adquiere Conocimiento")
     #file.write("\n")
@@ -160,14 +172,17 @@ def Conocimiento(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a1,a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a1,a2)
         
 def Informacion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write("Informacion sobre X")
     #file.write("\n")
@@ -177,14 +192,17 @@ def Informacion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a1,a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a1,a2)
         
 def Engano(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Engana a " + a2.nombre)
     #file.write("\n")
@@ -196,14 +214,17 @@ def Engano(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
 
 def Trickery(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Trick a " + a2.nombre)
     #file.write("\n")
@@ -214,14 +235,17 @@ def Trickery(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
 
 def Complicidad(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
 
     num = random.randrange(7)
@@ -235,14 +259,17 @@ def Complicidad(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,actores[num])
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,actores[num])
      
 def Fechoria(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Fechoria a " + a2.nombre)
     #file.write("\n")
@@ -253,14 +280,17 @@ def Fechoria(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
 
 def Mediacion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     num = random.randrange(7)
     while(num == a2.pid):
@@ -274,14 +304,17 @@ def Mediacion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,actores[num])
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,actores[num])
         
 def Recompensa(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     fid = 10
     num = random.randrange(7)
@@ -294,14 +327,17 @@ def Recompensa(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Aceptacion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Acepta")
     #file.write("\n")
@@ -311,14 +347,17 @@ def Aceptacion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Partida(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Parte hacia Lugar")
     #file.write("\n")
@@ -328,14 +367,17 @@ def Partida(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Prueba(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     fid = 13
     num = random.randrange(7)
@@ -349,14 +391,17 @@ def Prueba(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,actores[num])
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,actores[num])
         
 def Reaccion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Reacciona")
     #file.write("\n")
@@ -367,14 +412,17 @@ def Reaccion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Regalo(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     fid = 15
     num = random.randrange(7)
@@ -388,14 +436,17 @@ def Regalo(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(c > 100):
+            break
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Viaje(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Viaja a Lugar")
     #file.write("\n")
@@ -405,14 +456,17 @@ def Viaje(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Lucha(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Lucha contra " + a2.nombre)
     #file.write("\n")
@@ -422,14 +476,17 @@ def Lucha(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Marca(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a2.nombre + " afecta mentalmente a " + a1.nombre)
     #file.write("\n")
@@ -440,14 +497,17 @@ def Marca(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a1,a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a1,a2)
         
 def Victoria(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a2.nombre + " tiene la Victoria")
     #file.write("\n")
@@ -459,14 +519,17 @@ def Victoria(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Enmienda(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " se arregla con " + a2.nombre)
     #file.write("\n")
@@ -477,14 +540,17 @@ def Enmienda(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a1,a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a1,a2)
         
 def Regreso(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Regresa a Lugar")
     #file.write("\n")
@@ -496,14 +562,17 @@ def Regreso(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Persecucion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Persigue a " + a2.nombre)
     #file.write("\n")
@@ -515,14 +584,17 @@ def Persecucion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Socorro(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     fid = 23
     num = random.randrange(7)
@@ -536,14 +608,17 @@ def Socorro(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](actores[num],a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](actores[num],a2)
             
 def Fingimiento(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Finge frente a " + a2.nombre)
     #file.write("\n")
@@ -554,14 +629,17 @@ def Fingimiento(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Tareadificil(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " lleva a cabo Tarea dificil")
     #file.write("\n")
@@ -573,14 +651,17 @@ def Tareadificil(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a1,a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a1,a2)
         
 def Cumplimiento(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Cumple con su acometido")
     #file.write("\n")
@@ -590,14 +671,17 @@ def Cumplimiento(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a1,a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a1,a2)
         
 def Reconocimiento(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Reconoce la verdadera forma de " + a2.nombre)
     #file.write("\n")
@@ -607,14 +691,17 @@ def Reconocimiento(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Desenmascaramiento(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Desenmascara a " + a2.nombre)
     #file.write("\n")
@@ -625,14 +712,17 @@ def Desenmascaramiento(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Transfiguracion(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " se Transfigura en Algo")
     #file.write("\n")
@@ -643,14 +733,17 @@ def Transfiguracion(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a1,a2)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a1,a2)
         
 def Castigo(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Castiga a " + a2.nombre)
     #file.write("\n")
@@ -661,14 +754,17 @@ def Castigo(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
         
 def Boda(a1,a2):
-    if(random.randrange(10) > 8):
+    global count
+    count += 1
+    if((random.randrange(10) > 8  and count > 5) or count > 15):
                 return
     #file.write(a1.nombre + " Boda con " + a2.nombre)
     file.write(a1.nombre + " Boda " + a2.nombre)
@@ -678,11 +774,12 @@ def Boda(a1,a2):
     c = random.randrange(32)
     while(1):
         c = c + 1
-        c = c % 32
+        if(c > 100):
+            break
         
-        if(RelacionesEntreFunciones[fid][c] == 1):
-            if(random.randrange(10) < RelacionesEntreFunciones[fid][c]):
-                return funciones[c](a2,a1)
+        if(RelacionesEntreFunciones[fid][c%32] !=0):
+            if(random.randrange(10) < RelacionesEntreFunciones[fid][c%32]):
+                return funciones[c%32](a2,a1)
 
 def Inicio():
     num = random.randrange(3)
