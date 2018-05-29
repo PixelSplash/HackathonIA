@@ -1,9 +1,7 @@
-H Transgre O
-O Prohib H
-H Fechor O
-O Tarea X
-O Viaje X
-H Enmien O
-H Regre X
-O Tarea X
-O Acep X
+H Aleja X
+A Conoc X
+A Enmien H
+A Conoc X
+A Engan H
+H Enmien A
+H Lucha A

@@ -769,7 +769,7 @@ def Boda(a1,a2):
     #file.write(a1.nombre + " Boda con " + a2.nombre)
     file.write(a1.nombre + " Boda " + a2.nombre)
     file.write("\n")
-    print("Hola")
+   
     fid = 31
     c = random.randrange(32)
     while(1):

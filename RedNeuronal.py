@@ -37,78 +37,130 @@ with open('ntree.txt', "r", encoding="utf8") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 content = [x.strip() for x in content]
 
-print(content)
+
+def formarOrac(i):
+    j = 2
+    c = ""
+    oracion = []
+    for k,v in fdist.items():
+                if categorias[i][0] in k[2]:
+                    oracion.append(k[0])
+                    oracion.append(k[1])
+                    oracion.append(k[2])
+ 
+                    break
+    
+    while(oracion[j] != '.' and oracion[j] != ',' and oracion[j] != ';'):
+        for k,v in fdist.items():
+                    if oracion[j] in k[1] and oracion[j-1] in k[0]:
+                        oracion.append(k[2])
+                        j += 1
+                        break
+    print(oracion)
+    print("\n")
 
 for x in content:
+    print(x)
     arr = x.split()
 
     s = arr[0]
     c = arr[1]
     z = arr[2]
-    
+    i = 0
     if(c == "Aleja"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Prohib"):
-        pass
+       formarOrac(i)
+    i+=1
     if(c == "Transgre"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Conoc"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Infor"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Engan"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Trick"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Complic"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Fechor"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Mediac"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Recomp"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Acep"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Parti"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Prueba"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Reac"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Regal"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Viaje"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Lucha"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Marca"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Vict"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Enmien"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Regre"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Pers"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Ayud"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Finge"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Tarea"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Cump"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Recon"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Desen"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Transfig"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Cast"):
-        pass
+        formarOrac(i)
+    i+=1
     if(c == "Boda"):
-        pass
+        formarOrac(i)
 
 
