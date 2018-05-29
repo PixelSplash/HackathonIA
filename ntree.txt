@@ -1,14 +1,5 @@
-Heroe Transgre Donador
-Donador Aleja X
-Heroe Regre X
+Heroe Transgre Ordenante
+Heroe Ayud Donador
+Donador Reac X
+Heroe Parti X
 Donador Enmien Heroe
-Donador Acep X
-Heroe Reac X
-Donador Recon Heroe
-Heroe Conoc X
-Heroe Enmien Donador
-Heroe Lucha Donador
-Donador Pers Heroe
-Heroe Recon Donador
-Donador Desen Heroe
- Infor XHeroe Parti X

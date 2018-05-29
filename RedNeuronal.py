@@ -42,7 +42,7 @@ with open('ntree.txt', "r", encoding="utf8") as f:
 content = [x.strip() for x in content]
 
 def buscarTag(a):
-    print(a)
+    #print(a)
     
     for k,v in tags:
         #print(k)
@@ -59,20 +59,12 @@ def buscarTagsProbables(a,b):
     
     for k,v in tdist.items():
         #print(k)
+        
         if(k[0][1] == a and k[1][1] == b):
-            trigs.append((k,v))
-    print(trigs)
-    '''
-    maxx = trigs[0][1]
-    k = trigs[0][0]
+            return k[2][1]
+        
     
-    for x in trigs:
-        if maxx < x[1]:
-            maxx = x[1]
-            k = x[0]
-    return k[2][1]
-    '''
-    return a
+    return ""
 def formarOrac(i):
     j = 2
     oracion = []
@@ -93,16 +85,23 @@ def formarOrac(i):
     oracion.append(aux[n][1])
     oracion.append(aux[n][2])
 
-    print(buscarTagsProbables(aux[n][1],aux[n][2]))
+    cat = buscarTagsProbables(aux[n][1],aux[n][2])
+    #print("primer tag.........")
+    #print(cat)
     while(oracion[j] != '.' and oracion[j] != ',' and oracion[j] != ';'):
         c = 0
         aux = []
         for k,v in fdist.items():
                     if (oracion[j] in k[1] and oracion[j][0] == k[1][0]) and (oracion[j-1] in k[0] and oracion[j-1][0] == k[0][0]):
-                        c+=1
-                        aux.append((k,v))
-                        if(c > 20):
-                            break
+                        cataux = buscarTag(k[2])
+                        #print(cataux)
+                        if(cat == cataux):
+                            c+=1
+                            aux.append((k,v))
+                            if(c > 20):
+                                break
+        if(aux == []):
+            break
         maxx = aux[0][1]
         k = aux[0][0]
         for x in aux:
@@ -110,13 +109,19 @@ def formarOrac(i):
                 maxx = x[1]
                 k = x[0]
         
-        oracion.append(k[2])               
+        oracion.append(k[2])
+        
         j += 1
-    print(oracion)
-    print("\n")
+        #print("otro tag.........")
+        cat = buscarTagsProbables(oracion[j-1],oracion[j])
+        #print(cat)
+    sta = ""
+    for x in oracion:
+        sta = sta + x + " "
+    print(sta + "\n")
 
 for x in content:
-    print(x)
+    #print(x)
     arr = x.split()
 
     s = arr[0]
@@ -124,131 +129,131 @@ for x in content:
     z = arr[2]
     i = 0
     if(c == "Aleja"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Prohib"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Transgre"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Conoc"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Infor"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Engan"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Trick"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Complic"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Fechor"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Mediac"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Recomp"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Acep"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Parti"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Prueba"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Reac"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Regal"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Viaje"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Lucha"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Marca"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Vict"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Enmien"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Regre"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Pers"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Ayud"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Finge"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Tarea"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Cump"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Recon"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Desen"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Transfig"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Cast"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
     i+=1
     if(c == "Boda"):
-        print(s)
+        print(s,end=" ")
         formarOrac(i)
 
 
