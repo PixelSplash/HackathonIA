@@ -1,0 +1,171 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     2010 MB
+    Driver:   23.21.13.9101
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Rewired_Core.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Rewired_Core.dll into Unity Child Domain
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Rewired_Windows_Lib.dll (this message is harmless)
+Loading C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\Rewired_Windows_Lib.dll into Unity Child Domain
+- Completed reload, in  0.151 seconds
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.375338 ms
+Non platform assembly: data-0FCABC18 (this message is harmless)
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/data-0FCABC18.dll
+Non platform assembly: data-0FE4EBB0 (this message is harmless)
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/data-0FE4EBB0.dll
+Non platform assembly: data-15B61020 (this message is harmless)
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/data-15B61020.dll
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/steam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/.\steam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/steam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/libsteam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/.\libsteam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/libsteam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/steam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/.\steam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/steam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/libsteam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/.\libsteam_api
+Fallback handler could not load library C:/Users/bryam/Desktop/Helix/Helix_Data/Mono/libsteam_api
+Rewired: Searching for compatible XInput library...
+Rewired: Found Xinput1_4.dll.
+Platform assembly: C:\Users\bryam\Desktop\Helix\Helix_Data\Managed\System.Xml.dll (this message is harmless)
+Joystick disconnected ("Controller (XBOX 360 For Windows)").
+ 
+(Filename:  Line: 1258)
+
+Joystick reconnected ("Controller (XBOX 360 For Windows)").
+ 
+(Filename:  Line: 1323)
+
+Joystick reconnected ("Controller (XBOX 360 For Windows)").
+ 
+(Filename:  Line: 1323)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.048518 ms
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 869.
+Total: 10.109353 ms (FindLiveObjects: 0.055013 ms CreateObjectMapping: 0.028327 ms MarkObjects: 9.980441 ms  DeleteObjects: 0.044749 ms)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+openfile
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.682742 ms
+
+Unloading 82 unused Assets to reduce memory usage. Loaded Objects now: 741.
+Total: 10.118385 ms (FindLiveObjects: 0.047623 ms CreateObjectMapping: 0.027506 ms MarkObjects: 9.867539 ms  DeleteObjects: 0.174893 ms)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 848 -> priority: 1 
+  Thread -> id: 13c8 -> priority: 1 
+  Thread -> id: 35b0 -> priority: 1 
+  Thread -> id: 1264 -> priority: 1 
