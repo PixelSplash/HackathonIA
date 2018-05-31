@@ -43,12 +43,12 @@ RelacionesEntreFunciones = [[0,0,0,5,0,0,0,3,0,0,0,3,0,6,5,0,0,0,0,0,3,6,0,0,0,0
 
 
 #                            0 1 2 3 4 5 6                                           
-RelacionesEntreActores =   [[0,0,0,0,0,0,0],#0 Alejamiento
+RelacionesEntreActores =   [[1,3,0,0,0,0,0],#0 Alejamiento
                             [0,0,0,0,0,0,0],#1 Prohibicion
                             [0,0,0,0,0,0,0],#2 Transgresion
                             [0,0,0,0,0,0,0],#3 Conocimiento
                             [0,0,0,0,0,0,0],#4 Informacion
-                            [0,0,0,0,0,0,0],#5 Engano
+                            [2,0,0,0,0,0,0],#5 Engano
                             [0,0,0,0,0,0,0],#6 Trickery
                             [0,0,0,0,0,0,0],#7 Complicidad
                             [0,0,0,0,0,0,0],#8 Fechoria
@@ -794,9 +794,9 @@ funciones = [Alejamiento,Prohibicion,Transgresion,Conocimiento,Informacion,Engan
 
 
 actores[0] = actor(0,0,0,"El_Caballero",[1,1,1,1,1,1,1])
-actores[1] = actor(0,1,0,"El_Mago Malo",[1,1,1,1,1,1,1])
+actores[1] = actor(0,1,0,"El_Mago_Malo",[1,1,1,1,1,1,1])
 actores[2] = actor(0,2,0,"La_Princesa",[1,1,1,1,1,1,1])
-actores[3] = actor(0,3,0,"La_Bruja Blanca",[1,1,1,1,1,1,1])
+actores[3] = actor(0,3,0,"La_Bruja_Blanca",[1,1,1,1,1,1,1])
 actores[4] = actor(0,4,0,"El_Escudero",[1,1,1,1,1,1,1])
 actores[5] = actor(0,5,0,"El_Verdugo",[1,1,1,1,1,1,1])
 actores[6] = actor(0,6,0,"El_Capitan",[1,1,1,1,1,1,1])
