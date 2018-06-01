@@ -4,6 +4,7 @@ import pandas as pd
 from scipy.misc import imread
 from sklearn.metrics import accuracy_score
 import tensorflow as tf
+import random
 
 # To stop potential randomness
 seed = 128
@@ -20,6 +21,11 @@ os.path.exists(sub_dir)
 
 
 train = []
+train_x = []
+train_y = []
+val_x = []
+val_y = []
+
 f = open("DatosPosicion.txt","r", encoding="utf8")
 content = f.readlines()
 content = [x.strip() for x in content]
@@ -29,14 +35,33 @@ i = 0
 for line in content:
     line = line.split()
     if(len(line) == 10):
+        for j in range(10):
+            
+            line[j] = float(line[j])
+            if(line[j] > 100):
+                line[j] = 0.0
+            
         train.append((line,0))
     else:
+        for j in range(2):
+            line[j] = float(line[j])
+        if(line[2] == 'False'):
+            line[2] = 0.0
+        else:
+            line[2] = 1.0
+        
         train[i] = (train[i][0],line)
         i+=1             
 
-print(train)
+for x in train:
+    train_x.append(x[0])
+    train_y.append(x[1])
 
-#test = pd.read_csv(os.path.join(data_dir, 'Test.csv'))
+split_size = int(len(train_x)*0.7)
+
+train_x, val_x = train_x[:split_size], train_x[split_size:]
+train_y, val_y = train_y[:split_size], train_y[split_size:]
+
 
 #sample_submission = pd.read_csv(os.path.join(data_dir, 'Sample_Submission.csv'))
 
@@ -59,14 +84,16 @@ def preproc(unclean_batch_x):
 
 def batch_creator(batch_size, dataset_length, dataset_name):
     """Create batch with random samples and return appropriate format"""
-    batch_mask = rng.choice(dataset_length, batch_size)
-    
-    batch_x = eval(dataset_name + '_x')[[batch_mask]].reshape(-1, input_num_units)
-    batch_x = preproc(batch_x)
-    
-    if dataset_name == 'train':
-        batch_y = eval(dataset_name).ix[batch_mask, 'label'].values
-        batch_y = dense_to_one_hot(batch_y)
+
+    batch_x = []
+    batch_y = []
+    i=0
+    for i in range(0,batch_size):
+        num = random.randrange(0,dataset_length)
+        batch_x.append(eval(dataset_name + '_x')[num])
+
+        #batch_x = preproc(batch_x)
+        batch_y.append(eval(dataset_name + '_y')[num])
         
     return batch_x, batch_y
 
@@ -80,7 +107,7 @@ def batch_creator(batch_size, dataset_length, dataset_name):
 
 # number of neurons in each layer
 input_num_units = 10
-hidden_num_units = 50
+hidden_num_units = 5
 output_num_units = 3
 
 # define placeholders
@@ -88,9 +115,8 @@ x = tf.placeholder(tf.float32, [None, input_num_units])
 y = tf.placeholder(tf.float32, [None, output_num_units])
 
 # set remaining variables
-epochs = 5
-batch_size = 128
-learning_rate = 0.01
+epochs = 7
+learning_rate = 0.05
 
 ### define weights and biases of the neural network (refer this article if you don't understand the terminologies)
 
@@ -113,8 +139,10 @@ cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels = y, logits
 
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
 
+#train_step = tf.train.GradientDescentOptimizer(0.001).minimize(cost)
+
 init = tf.global_variables_initializer()
-'''
+
 with tf.Session() as sess:
     # create initialized variables
     sess.run(init)
@@ -127,12 +155,11 @@ with tf.Session() as sess:
     
     for epoch in range(epochs):
         avg_cost = 0
-        total_batch = int(train.shape[0]/batch_size)
-        for i in range(total_batch):
-            batch_x, batch_y = batch_creator(batch_size, train_x.shape[0], 'train')
-            _, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
+        #_,c = sess.run(train_step, feed_dict = {x: train_x, y: train_y})
+
+        _,c = sess.run([optimizer, cost], feed_dict = {x: train_x, y: train_y})
             
-            avg_cost += c / total_batch
+        avg_cost = c
             
         print ("Epoch:", (epoch+1), "cost =", "{:.5f}".format(avg_cost))
     
@@ -142,8 +169,11 @@ with tf.Session() as sess:
     # find predictions on val set
     pred_temp = tf.equal(tf.argmax(output_layer, 1), tf.argmax(y, 1))
     accuracy = tf.reduce_mean(tf.cast(pred_temp, "float"))
-    print ("Validation Accuracy:", accuracy.eval({x: val_x.reshape(-1, input_num_units), y: dense_to_one_hot(val_y)}))
-    
-    #predict = tf.argmax(output_layer, 1)
-    #pred = predict.eval({x: test_x.reshape(-1, input_num_units)})
-'''
+    print ("Validation Accuracy:", accuracy.eval({x: val_x, y: val_y}))
+
+
+    data = sess.run(output_layer, {x:train_x})
+    for x in range(20):
+        print(data[x+100]/10)
+        print(train_y[x+100])
+        print("---------------")
