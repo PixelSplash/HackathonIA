@@ -1,0 +1,10 @@
+Ejecutar primero el BotTrainerAndServer.py
+
+Esperar a que termine de ejecutar e imprima la prediccion
+
+Luego abrir el juego Helix.exe
+Pueden jugar de 1 jugador en adelante (se requiere mando para computadora)
+El jugador 2 siempre sera el Bot y jugara solo
+
+No salirse del juego en media pertida preferiblemente ya que con cada juego se generan mas datos
+Si se quiere volver a abrir el juego, hay que volver a ejecutar primero el BotTrainerAndServer.py
